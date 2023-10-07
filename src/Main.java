@@ -68,7 +68,6 @@ public class Main {
             System.out.println("file1 не может совпадать с file2!!!");
             return false;
         }
-
         deistvie = args[0];
         file1 = args[1];
         file2 = args[2];
