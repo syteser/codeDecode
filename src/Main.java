@@ -49,7 +49,7 @@ public class Main {
     }
 
     public static boolean commandLine(String[] args) {
-        //может быть либо 1 парметр (Хелп или ?) либо 3 (действие, файл1, файл2, key)
+        //может быть либо 1 парметр (Хелп или ?) либо 4 (действие, файл1, файл2, key)
         if (args.length != 1 && args.length != 4) {
             return false;
         }
