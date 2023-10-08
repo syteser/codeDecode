@@ -15,7 +15,6 @@ public class Main {
             return;
         }
 
-        key = (args[3]);
         sdvig = new int[key.length()];
         for (int i = 0; i < sdvig.length; i++) {
             sdvig[i] = key.charAt(i);
@@ -72,7 +71,8 @@ public class Main {
         deistvie = args[0];
         fileIn = args[1];
         fileOut = args[2];
-        System.out.printf("Deistvie = %s\nFile1 = %s\nFile2 = %s", deistvie, fileIn, fileOut);
+        key = args[3];
+        System.out.printf("Deistvie = %s\nFile1 = %s\nFile2 = %s\nKey = %s", deistvie, fileIn, fileOut, key);
         return true;
     }
 
