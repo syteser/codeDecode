@@ -24,8 +24,7 @@ public class Main {
             try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter = new FileWriter(fileOut)) {
                 int i = 0;
                 while (fileReader.ready()) {
-                    i++;
-                    i = i > sdvig.length - 1 ? 0 : i;
+                    i = i == sdvig.length ? 0 : i++;
                     char c = (char) fileReader.read();
                     c += sdvig[i];
                     fileWriter.write(c);
@@ -37,8 +36,7 @@ public class Main {
             try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter2 = new FileWriter(fileOut)) {
                 int i = 0;
                 while (fileReader.ready()) {
-                    i++;
-                    i = i > sdvig.length - 1 ? 0 : i;
+                    i = i == sdvig.length ? 0 : i++;
                     char c = (char) fileReader.read();
                     c -= sdvig[i];
                     fileWriter2.write(c);
@@ -58,7 +56,7 @@ public class Main {
             return false;
         }
 
-        if ((args.length == 1 && args[0].equals("help")) || args.length == 1 && args[0].equals("?")) {
+        if ((args.length == 1 && args[0].equalsIgnoreCase("help")) || (args.length == 1 && args[0].equals("?"))) {
             System.out.println("Welcome to help!");
             System.out.println("Возможные параметры code или decode");
         }
