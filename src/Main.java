@@ -4,8 +4,8 @@ public class Main {
     static int[] sdvig;
     static String key;
     static String deistvie;
-    static String file1;
-    static String file2;
+    static String fileIn;
+    static String fileOut;
     static final String CODE_DEYSTVIE = "code";
     static final String DECODE_DEYSTVIE = "decode";
 
@@ -22,7 +22,7 @@ public class Main {
         }
 
         if (deistvie.equalsIgnoreCase(CODE_DEYSTVIE)) {
-            try (FileReader fileReader = new FileReader(file1); FileWriter fileWriter = new FileWriter(file2)) {
+            try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter = new FileWriter(fileOut)) {
                 int i = 0;
                 while (fileReader.ready()) {
                     i++;
@@ -35,7 +35,7 @@ public class Main {
         }
 
         if (deistvie.equalsIgnoreCase(DECODE_DEYSTVIE)) {
-            try (FileReader fileReader = new FileReader(file1); FileWriter fileWriter2 = new FileWriter(file2)) {
+            try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter2 = new FileWriter(fileOut)) {
                 int i = 0;
                 while (fileReader.ready()) {
                     i++;
@@ -70,9 +70,9 @@ public class Main {
         }
 
         deistvie = args[0];
-        file1 = args[1];
-        file2 = args[2];
-        System.out.printf("Deistvie = %s\nFile1 = %s\nFile2 = %s", deistvie, file1, file2);
+        fileIn = args[1];
+        fileOut = args[2];
+        System.out.printf("Deistvie = %s\nFile1 = %s\nFile2 = %s", deistvie, fileIn, fileOut);
         return true;
     }
 
