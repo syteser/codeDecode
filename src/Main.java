@@ -3,11 +3,11 @@ import java.io.*;
 public class Main {
     static int[] sdvig;
     static String key;
-    static String deystvie;
+    static String mode;
     static String fileIn;
     static String fileOut;
-    static final String CODE_DEYSTVIE = "code";
-    static final String DECODE_DEYSTVIE = "decode";
+    static final String CODE_MODE = "code";
+    static final String DECODE_MODE = "decode";
 
     public static void main(String[] args) throws IOException {
 
@@ -20,7 +20,7 @@ public class Main {
             sdvig[i] = key.charAt(i);
         }
 
-        if (deystvie.equalsIgnoreCase(CODE_DEYSTVIE)) {
+        if (mode.equalsIgnoreCase(CODE_MODE)) {
             try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter = new FileWriter(fileOut)) {
                 int i = -1;
                 while (fileReader.ready()) {
@@ -32,7 +32,7 @@ public class Main {
             }
         }
 
-        if (deystvie.equalsIgnoreCase(DECODE_DEYSTVIE)) {
+        if (mode.equalsIgnoreCase(DECODE_MODE)) {
             try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter2 = new FileWriter(fileOut)) {
                 int i = -1;
                 while (fileReader.ready()) {
@@ -67,10 +67,11 @@ public class Main {
             return false;
         }
 
-        deystvie = args[0];
+        mode = args[0];
         fileIn = args[1];
         fileOut = args[2];
         key = args[3];
+
 //        System.out.printf("Deistvie = %s\nFile1 = %s\nFile2 = %s\nKey = %s", deystvie, fileIn, fileOut, key);
 
         return true;
