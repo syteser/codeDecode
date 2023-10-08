@@ -22,10 +22,9 @@ public class Main {
 
         if (deystvie.equalsIgnoreCase(CODE_DEYSTVIE)) {
             try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter = new FileWriter(fileOut)) {
-                int i = 0;
+                int i = -1;
                 while (fileReader.ready()) {
-                    if (i == sdvig.length-1) i = 0;
-                    else i++;
+                    if (++i == sdvig.length) i = 0;
                     char c = (char) fileReader.read();
                     c += sdvig[i];
                     fileWriter.write(c);
@@ -35,10 +34,9 @@ public class Main {
 
         if (deystvie.equalsIgnoreCase(DECODE_DEYSTVIE)) {
             try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter2 = new FileWriter(fileOut)) {
-                int i = 0;
+                int i = -1;
                 while (fileReader.ready()) {
-                    if (i == sdvig.length-1) i = 0;
-                    else i++;
+                    if (++i == sdvig.length) i = 0;
                     char c = (char) fileReader.read();
                     c -= sdvig[i];
                     fileWriter2.write(c);
