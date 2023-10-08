@@ -24,7 +24,8 @@ public class Main {
             try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter = new FileWriter(fileOut)) {
                 int i = 0;
                 while (fileReader.ready()) {
-                    i = i == sdvig.length ? 0 : i++;
+                    if (i == sdvig.length-1) i = 0;
+                    else i++;
                     char c = (char) fileReader.read();
                     c += sdvig[i];
                     fileWriter.write(c);
@@ -36,13 +37,15 @@ public class Main {
             try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter2 = new FileWriter(fileOut)) {
                 int i = 0;
                 while (fileReader.ready()) {
-                    i = i == sdvig.length ? 0 : i++;
+                    if (i == sdvig.length-1) i = 0;
+                    else i++;
                     char c = (char) fileReader.read();
                     c -= sdvig[i];
                     fileWriter2.write(c);
                 }
             }
         }
+
     }
 
     public static boolean commandLine(String[] args) {
@@ -62,7 +65,7 @@ public class Main {
         }
 
         if (args[1].equalsIgnoreCase(args[2])) {
-            System.out.println("file1 не может совпадать с file2!!!");
+            System.out.println("Исходный файл не может совпадать с финальным файлом!");
             return false;
         }
 
