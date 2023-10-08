@@ -3,7 +3,7 @@ import java.io.*;
 public class Main {
     static int[] sdvig;
     static String key;
-    static String deistvie;
+    static String deystvie;
     static String fileIn;
     static String fileOut;
     static final String CODE_DEYSTVIE = "code";
@@ -20,7 +20,7 @@ public class Main {
             sdvig[i] = key.charAt(i);
         }
 
-        if (deistvie.equalsIgnoreCase(CODE_DEYSTVIE)) {
+        if (deystvie.equalsIgnoreCase(CODE_DEYSTVIE)) {
             try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter = new FileWriter(fileOut)) {
                 int i = 0;
                 while (fileReader.ready()) {
@@ -32,7 +32,7 @@ public class Main {
             }
         }
 
-        if (deistvie.equalsIgnoreCase(DECODE_DEYSTVIE)) {
+        if (deystvie.equalsIgnoreCase(DECODE_DEYSTVIE)) {
             try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter2 = new FileWriter(fileOut)) {
                 int i = 0;
                 while (fileReader.ready()) {
@@ -66,11 +66,12 @@ public class Main {
             return false;
         }
 
-        deistvie = args[0];
+        deystvie = args[0];
         fileIn = args[1];
         fileOut = args[2];
         key = args[3];
-        System.out.printf("Deistvie = %s\nFile1 = %s\nFile2 = %s\nKey = %s", deistvie, fileIn, fileOut, key);
+//        System.out.printf("Deistvie = %s\nFile1 = %s\nFile2 = %s\nKey = %s", deystvie, fileIn, fileOut, key);
+
         return true;
     }
 
