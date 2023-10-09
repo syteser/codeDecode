@@ -33,13 +33,13 @@ public class Main {
         }
 
         if (mode.equalsIgnoreCase(DECODE_MODE)) {
-            try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter2 = new FileWriter(fileOut)) {
+            try (FileReader fileReader = new FileReader(fileIn); FileWriter fileWriter = new FileWriter(fileOut)) {
                 int i = -1;
                 while (fileReader.ready()) {
                     if (++i == sdvig.length) i = 0;
                     char c = (char) fileReader.read();
                     c -= sdvig[i];
-                    fileWriter2.write(c);
+                    fileWriter.write(c);
                 }
             }
         }
