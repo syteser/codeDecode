@@ -8,7 +8,7 @@ public class Main {
     static String fileOut;
     static final String CODE_MODE = "code";
     static final String DECODE_MODE = "decode";
-    static final String FILE_ERROR = "Файл не найден или заблокирован";
+//    static final String FILE_ERROR = "Файл не найден или заблокирован";
 
     public static void main(String[] args) throws IOException {
 
@@ -32,7 +32,7 @@ public class Main {
                 }
             }
             catch (Exception e){
-                System.out.println(FILE_ERROR);
+                System.out.println(e.getMessage());
             }
         }
 
@@ -47,7 +47,7 @@ public class Main {
                 }
             }
             catch (Exception e){
-                System.out.println(FILE_ERROR);
+                System.out.println(e.getMessage());
             }
         }
 
