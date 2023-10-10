@@ -8,6 +8,7 @@ public class Main {
     static String fileOut;
     static final String CODE_MODE = "code";
     static final String DECODE_MODE = "decode";
+    static final String FILE_ERROR = "Файл не найден или заблокирован";
 
     public static void main(String[] args) throws IOException {
 
@@ -30,6 +31,9 @@ public class Main {
                     fileWriter.write(c);
                 }
             }
+            catch (Exception e){
+                System.out.println(FILE_ERROR);
+            }
         }
 
         if (mode.equalsIgnoreCase(DECODE_MODE)) {
@@ -41,6 +45,9 @@ public class Main {
                     c -= sdvig[i];
                     fileWriter.write(c);
                 }
+            }
+            catch (Exception e){
+                System.out.println(FILE_ERROR);
             }
         }
 
