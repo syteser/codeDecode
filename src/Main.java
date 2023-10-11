@@ -8,10 +8,11 @@ public class Main {
     static String fileOut;
     static final String CODE_MODE = "code";
     static final String DECODE_MODE = "decode";
+    static final String FILE_ERROR = "Файл не найден или заблокирован";
 
     public static void main(String[] args) throws IOException {
 
-        if (!loadArgsFromCommandLine(args)) {
+        if (!commandLine(args)) {
             return;
         }
 
@@ -31,7 +32,7 @@ public class Main {
                 }
             }
             catch (Exception e){
-                System.out.println(e.getMessage());
+                System.out.println(FILE_ERROR);
             }
         }
 
@@ -46,13 +47,13 @@ public class Main {
                 }
             }
             catch (Exception e){
-                System.out.println(e.getMessage());
+                System.out.println(FILE_ERROR);
             }
         }
 
     }
 
-    public static boolean loadArgsFromCommandLine(String[] args) {
+    public static boolean commandLine(String[] args) {
         //может быть либо 1 парметр (Хелп или ?) либо 4 (действие, файл1, файл2, key)
         if (args.length != 1 && args.length != 4) {
             return false;
@@ -77,6 +78,8 @@ public class Main {
         fileIn = args[1];
         fileOut = args[2];
         key = args[3];
+
+//        System.out.printf("Deistvie = %s\nFile1 = %s\nFile2 = %s\nKey = %s", deystvie, fileIn, fileOut, key);
 
         return true;
     }
