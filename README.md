@@ -1,3 +1,14 @@
+# Text file encoder/decoder The program accepts 4 parameters from the command line:
+<br>1 - type - encode or decode (code decode)
+<br>2 - source file name (txt)
+<br>3 - name of the final (encoded) file
+<br>4 - key phrase 1......int length
+
+<br>The first character of the source file is shifted to the first character of the key, the second to the second... when the key characters run out, the first character of the key is taken again, and so on. 
+<br>The decoding process occurs in a similar way.
+
+=====================================================================================================
+
 # Кодер/декодер текстовых файлов
 Программа принимает с коммандной строки 4 параметра:
 <br>1 - тип - кодировать или дектодировать (code decode)
