@@ -1,4 +1,5 @@
-# Text file encoder/decoder The program accepts 4 parameters from the command line:
+# Text file encoder/decoder 
+The program accepts 4 parameters from the command line:
 <br>1 - type - encode or decode (code decode)
 <br>2 - source file name (txt)
 <br>3 - name of the final (encoded) file
